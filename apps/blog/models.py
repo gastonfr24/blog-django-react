@@ -1,6 +1,7 @@
-from distutils.command.upload import upload
+from django.utils import timezone
 import uuid
 from django.db import models
+from apps.category.models import Category
 
 def blog_directory_path(instance, filename):
     return 'blog/{0}/{1}'.format(instance.title, filename)
@@ -25,4 +26,27 @@ class Post(models.Model):
     
     #author = 
 
-    #category =  
+    category =  models.ForeignKey(Category, on_delete= models.PROTECT)
+
+    published = models.DateTimeField(default= timezone.now)
+
+    status = models.CharField(max_length=10, choises = options, default='draft')
+
+    objects = models.Manager()  # default manager
+    postobjects = PostObjects()  # custom manager
+
+    class Meta:
+        ordering = ('-published',)
+
+    def __str__(self):
+        return self.title
+
+    def get_video(self):
+        if self.video:
+            return self.video.url
+        return ''
+
+    def get_thumbnail(self):
+        if self.thumbnail:
+            return self.thumbnail.url
+        return ''
