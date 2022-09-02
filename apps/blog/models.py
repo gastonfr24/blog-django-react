@@ -21,7 +21,7 @@ class Post(models.Model):
     slug = models.SlugField(unique=True)
     thumbnail = models.ImageField(upload_to = blog_directory_path)
     video = models.FileField(upload_to= blog_directory_path, blank=True, null=True)
-    description = models.TextField
+    description = models.TextField()
     excerpt = models.CharField(max_length=100)
     
     #author = 

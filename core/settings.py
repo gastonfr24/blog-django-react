@@ -15,15 +15,12 @@ DEBUG = os.environ.get('DEBUG')
 
 SITE_NAME = 'Blogpy'
 
-if DEBUG:
+if not DEBUG:
     ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-]
-else:
-    ALLOWED_HOSTS = [
-    'www.xname.com'
-]
+        "xname.com",
+        ".xname.com",
+        "www.xname.com"
+    ]
 
 # Render Hostname
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')

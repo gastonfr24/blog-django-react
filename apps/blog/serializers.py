@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Post
-from category.serializers import CategorySerializer
+from apps.category.serializers import CategorySerializer
 
 class PostSerializer(serializers.ModelSerializer):
     thumbnail=serializers.CharField(source='get_thumbnail')
