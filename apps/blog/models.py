@@ -30,7 +30,7 @@ class Post(models.Model):
 
     published = models.DateTimeField(default= timezone.now)
 
-    status = models.CharField(max_length=10, choises = options, default='draft')
+    status = models.CharField(max_length=10, choices=options, default='draft')
 
     objects = models.Manager()  # default manager
     postobjects = PostObjects()  # custom manager
