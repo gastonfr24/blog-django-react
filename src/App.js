@@ -4,10 +4,15 @@ import Error404 from "containers/errores/Error404";
 import { Provider } from "react-redux";
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 
+import store from "store";
+
+import { Card } from "components/Card";
+
+
 
 function App() {
   return (
-    <Provider>
+    <Provider store={store}>
     <Router>
     <Routes>
       {/* Ruta de error */}
@@ -15,9 +20,10 @@ function App() {
     
       <Route path='/' element={<Home/>} />
     
-    
     </Routes>
+    
     </Router>
+  
     </Provider>
   );
 }
