@@ -1,21 +1,30 @@
 import FullWidthLayout from "hocs/layouts/FullWidthLayout";
 import { connect } from "react-redux";
+import { useEffect } from "react";
+import BlogList from "components/navigation/blog/BlogList";
+import Header from "components/navigation/blog/Header";
 
-
-function Home (
+function Blog (
    {}
      ){
 
+    
+    useEffect(()=>{
+
+    },[])
+
     return(
         <FullWidthLayout>
-            Home
+           <Header/>
+           <BlogList/>
         </FullWidthLayout>
     )
 }
 
 const mapStateToProps = state =>({
-    blog_list : state.blog.blog_list
+
 })
 
 export default connect(mapStateToProps,{
-})(Home);
+
+})(Blog);

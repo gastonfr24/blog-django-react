@@ -24,11 +24,11 @@ export default function blog(state = initialState, action){
     switch(type){
 
         case GET_BLOG_LIST_SUCCESS:
-            return{...state,    
-                blog_list: null,
-                count: null,
-                next: null,
-                previous: null,}
+            return{...state,
+                blog_list: payload.results.posts,
+                count: payload.count,
+                next: payload.next,
+                previous: payload.previous,}
 
         case GET_BLOG_LIST_FAIL:
             return{...state,    
