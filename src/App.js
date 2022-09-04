@@ -10,6 +10,7 @@ import { Provider } from "react-redux";
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 
 import store from "store";
+import Search from "containers/pages/Search";
 
 
 function App() {
@@ -27,6 +28,8 @@ function App() {
       <Route path='/Blog/post/:slug' element={<BlogPost/>} />
 
       <Route path='/Blog/category/:category_id' element={<BlogCategory/>} />
+
+      <Route path='/search/:term' element={<Search/>} />
 
 
     </Routes>

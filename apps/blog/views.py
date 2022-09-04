@@ -5,6 +5,8 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import permissions
 
+from django.db.models.query_utils import Q
+
 from apps.category.models import Category
 
 from .models import Post
