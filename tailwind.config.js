@@ -88,5 +88,6 @@ module.exports = {
     require('@tailwindcss/aspect-ratio'),
     require('tailwindcss-question-mark'),
     require('tailwind-scrollbar-hide'),
+    require('@tailwindcss/forms'),
   ],
 }
