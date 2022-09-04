@@ -3,19 +3,17 @@ import { connect } from "react-redux"
 import { get_blog_list, get_blog_list_page } from "redux/actions/blog"
 import LoadingCard from "components/loaders/LoadingCard"
 import BlogCard from "./BlogCard"
-import SmallPaginator from "components/pagination/SmallPaginator"
+import CategorySmallPaginator from "components/pagination/CategorySmallPaginator"
 
 
-const BlogList=({
+const BlogCategoryList=({
     blog_list,
-    get_blog_list,
-    get_blog_list_page,count}) =>{
+    get_blog_list_page,
+    category_id,
+    count
+    }) =>{
 
 
-    useEffect(() => {
-        get_blog_list()
-    }, [])
-    
     
     
     return(
@@ -36,7 +34,7 @@ const BlogList=({
                                 ))
                             }
                         </div>
-                            <SmallPaginator get_blog_list_page={get_blog_list_page} blog_list={blog_list} count={count}/>
+                            <CategorySmallPaginator category_id={category_id} get_blog_list_page={get_blog_list_page} blog_list={blog_list} count={count}/>
                     </div>
                 </div>
                 </>:
@@ -47,11 +45,9 @@ const BlogList=({
 }
 
 const mapToStateProps = state =>({
-    blog_list : state.blog.blog_list,
-    cout: state.blog.count
+
 })
 
 export default connect(mapToStateProps,{
-    get_blog_list,
-    get_blog_list_page
-})(BlogList)
+
+})(BlogCategoryList)

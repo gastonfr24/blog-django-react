@@ -3,6 +3,9 @@ import Error404 from "containers/errores/Error404";
 import Blog from "containers/pages/blog/Blog";
 import BlogPost from "containers/pages/blog/Blog_post";
 
+import BlogCategories from "components/blog/BlogCategories";
+import BlogCategory from "containers/pages/blog/categories/BlogCategory";
+
 import { Provider } from "react-redux";
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 
@@ -22,6 +25,9 @@ function App() {
       <Route path='/Blog' element={<Blog/>} />
 
       <Route path='/Blog/post/:slug' element={<BlogPost/>} />
+
+      <Route path='/Blog/category/:category_id' element={<BlogCategory/>} />
+
 
     </Routes>
     
