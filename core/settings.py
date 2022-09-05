@@ -41,7 +41,8 @@ DJANGO_APPS = [
 
 PROJECT_APPS = [
 'apps.blog',
-'apps.category'
+'apps.category',
+'apps.contacts',
 ]
 
 THIRD_PARTY_APPS = [
@@ -132,6 +133,12 @@ if not DEBUG:
         'https://admin.xname.com',
         'https://blog.xname.com',
     ]
+
+
+    # Active Campaign
+ACTIVE_CAMPAIGN_URL=os.environ.get('ACTIVE_CAMPAIGN_URL')
+ACTIVE_CAMPAIGN_KEY=os.environ.get('ACTIVE_CAMPAIGN_KEY')
+
 
 
 # mas seguridad en las contraseñas
@@ -241,3 +248,5 @@ if not DEBUG:
     PUBLIC_MEDIA_LOCATION = 'media'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
     DEFAULT_FILE_STORAGE = 'core.storage_backends.MediaStore'
+
+

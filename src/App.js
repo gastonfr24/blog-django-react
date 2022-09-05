@@ -1,8 +1,8 @@
 import Error404 from "containers/errores/Error404";
 
 import Home from "containers/pages/Home"; 
-import About from "containers/pages/blog/About";
-import Contact from "containers/pages/blog/Contact";
+import About from "containers/pages/about/About";
+import Contact from "containers/pages/contact/Contact"
 
 import Blog from "containers/pages/blog/Blog";
 import BlogPost from "containers/pages/blog/Blog_post";
