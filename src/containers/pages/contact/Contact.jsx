@@ -201,18 +201,20 @@ function Contact(){
               </div>
 
                 <div>
-                    <label htmlFor="location" className="block text-sm font-gilroy-medium text-gray-700">
+                    <label className="block text-sm font-gilroy-medium text-gray-700">
                         Presupuesto (opcional)
                     </label>
                     <select
                         id="budget"
                         name="budget"
                         onChange={e => onChange(e)}
+                        value={budget}
                         className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
                     >
-                        <option value={budget}>$0 - $5,000</option>
-                        <option value={budget}>$5,000 - $10,000</option>
-                        <option value={budget}>$10,000+</option>
+                        <option value="" disabled selected>Sin Presupuesto</option>
+                        <option value="0-5,000">$0 - $5,000</option>
+                        <option value="5,000-10,000">$5,000 - $10,000</option>
+                        <option value="10,000+">$10,000+</option>
                     </select>
                 </div>
 
